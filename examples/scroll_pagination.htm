@@ -1,0 +1,92 @@
+<html>
+
+<head>
+
+<style type="text/css">
+
+#panel1 {
+	overflow: auto; 
+	height: 200px;
+	background-color: #CCC;
+	padding: 10px;
+}
+
+#panel1_scroll_status {
+	color: #FFF;
+	background-color: #000;
+	padding: 10px;
+	font: bold 14px Arial, Helvetica, Sans-Serif;
+}
+
+#panel1_scroll_status span {
+	color: #F00;
+}
+
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script> 
+<script src="../jquery.scroll.events.js"></script> 
+
+<script>
+$(document).ready(function(){
+
+		/** WINDOW SCROLLING EVENTS **/
+
+		$(window).bind('scrollstart', function(){
+				$("body").css('background-color', '#099');
+		});
+		
+		$(window).bind('scrollstop', function(){
+				$("body").css('background-color', '#FFF');
+		});
+		
+		$("#panel1").bind('scrollstart', function(){
+				$("#panel1_scroll_status").css('background-color', '#666')
+				$("#panel1_scroll_status span").css('color', '#FF0').html("SOMEWHERE IN THE MIDDLE");
+		});
+
+		$("#panel1").bind('scrollreachtop', function(){
+				$("#panel1_scroll_status").css('background-color', '#000')
+				$("#panel1_scroll_status span").css('color', '#F00').html("TOP");
+		});
+
+		$("#panel1").bind('scrollreachbottom', function(){
+				$("#panel1_scroll_status").css('background-color', '#000')
+				$("#panel1_scroll_status span").css('color', '#F00').html("BOTTOM");
+		});
+
+
+});
+</script>
+</head>
+
+<body>
+	<div>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget tincidunt sem. Donec placerat varius lacinia. Proin ornare erat enim, nec ullamcorper ligula. Cras vestibulum accumsan venenatis. Maecenas sed risus quam. Etiam nec urna tellus, vitae dapibus augue. Aliquam erat volutpat. Ut fermentum nisi vehicula nisi tincidunt luctus. Fusce ac felis sapien. Aliquam erat volutpat. In pretium volutpat orci, in fermentum lectus rutrum sit amet. Suspendisse ante mi, lacinia eu ullamcorper sed, suscipit in justo. Suspendisse potenti.</p>
+		<p>Nullam cursus elementum erat et placerat. Nam sed sapien ipsum. Duis non lectus a mauris posuere ornare a a erat. Duis blandit mi nunc, in vestibulum leo. Nam urna neque, varius pharetra ullamcorper in, placerat non nunc. Donec volutpat purus sed metus suscipit accumsan. Maecenas magna urna, lobortis vel tristique nec, eleifend a ipsum. Integer vel diam enim. Maecenas pretium, turpis sit amet ultricies fringilla, velit lectus faucibus turpis, eget elementum est nibh non sapien. Nam eget tincidunt felis. In hac habitasse platea dictumst. Nullam malesuada, neque semper lobortis fringilla, neque elit tempor nibh, non ultrices tellus libero eu arcu. Phasellus laoreet dui nec tortor molestie vitae sollicitudin risus tristique. Sed ac scelerisque felis. Integer fringilla volutpat dui sed tincidunt. Phasellus aliquet ultricies mi. Nam fringilla, lorem et egestas pretium, ante massa dapibus lorem, a semper metus risus sed elit. Curabitur vitae neque lectus, quis tincidunt nibh. Aenean tristique diam id urna molestie placerat.</p>
+		<p>Suspendisse potenti. Maecenas tempor est nec dui pretium rhoncus. Sed non lacinia ipsum. Nullam aliquam tellus ut quam pharetra quis mattis dolor suscipit. Cras vulputate urna nec augue sodales at tincidunt purus imperdiet. Donec tempus porttitor interdum. Sed luctus, lorem eget ullamcorper aliquet, ligula turpis interdum purus, id facilisis dolor eros sed metus. Nullam blandit, est non sagittis posuere, ipsum ligula sagittis dolor, id dapibus enim est ut nulla. Donec at arcu sed tortor imperdiet auctor id at ipsum. Vestibulum tincidunt lorem tempus massa iaculis pulvinar. Aenean porttitor lorem eu nisi bibendum pulvinar.</p>
+		<p>Donec tristique aliquet enim sed aliquam. Nunc at libero orci, ut semper magna. Sed semper enim at purus fermentum ut varius leo bibendum. In commodo massa eget turpis ultrices consequat. Pellentesque metus sem, vestibulum ac malesuada id, condimentum eu leo. Donec eleifend nulla nec libero elementum pellentesque. In hac habitasse platea dictumst. Suspendisse ut rutrum justo. Curabitur blandit tristique libero. Vestibulum augue leo, aliquet condimentum rhoncus a, euismod ac eros. Morbi cursus diam diam, id adipiscing tortor. Sed accumsan tincidunt enim. Sed tincidunt convallis lectus vel imperdiet. Nam condimentum congue justo eget tempor. Proin sollicitudin elementum erat ac tempus.</p>
+		<p>Duis lacinia arcu laoreet nulla ornare auctor. Praesent non tellus in augue vestibulum fringilla a in tellus. Morbi id nisl mauris, nec lobortis urna. Proin justo eros, dictum ut venenatis nec, tempus eget urna. Ut lacinia nisi ac tortor scelerisque blandit. Maecenas congue pharetra sollicitudin. Vivamus ornare venenatis orci sit amet scelerisque. In hac habitasse platea dictumst. Nulla mauris odio, eleifend id consectetur a, hendrerit non nisi. Sed sit amet odio felis, vitae vehicula nulla. Mauris ultricies placerat urna in fringilla. Phasellus velit risus, sodales id tempor eu, porta a arcu. Suspendisse potenti. Praesent id auctor est. Aliquam fringilla semper risus, id consectetur diam gravida quis. Aliquam volutpat, elit non mattis volutpat, risus tellus suscipit tortor, sit amet sollicitudin tortor elit et leo.</p>	
+	</div>
+
+	<div id="panel1_scroll_status">Panel 1. Scroll position: <span>TOP</span></div>
+	<div id="panel1">
+		<p><b>SCROLL ME TO THE BOTTOM</b></p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget tincidunt sem. Donec placerat varius lacinia. Proin ornare erat enim, nec ullamcorper ligula. Cras vestibulum accumsan venenatis. Maecenas sed risus quam. Etiam nec urna tellus, vitae dapibus augue. Aliquam erat volutpat. Ut fermentum nisi vehicula nisi tincidunt luctus. Fusce ac felis sapien. Aliquam erat volutpat. In pretium volutpat orci, in fermentum lectus rutrum sit amet. Suspendisse ante mi, lacinia eu ullamcorper sed, suscipit in justo. Suspendisse potenti.</p>
+		<p>Nullam cursus elementum erat et placerat. Nam sed sapien ipsum. Duis non lectus a mauris posuere ornare a a erat. Duis blandit mi nunc, in vestibulum leo. Nam urna neque, varius pharetra ullamcorper in, placerat non nunc. Donec volutpat purus sed metus suscipit accumsan. Maecenas magna urna, lobortis vel tristique nec, eleifend a ipsum. Integer vel diam enim. Maecenas pretium, turpis sit amet ultricies fringilla, velit lectus faucibus turpis, eget elementum est nibh non sapien. Nam eget tincidunt felis. In hac habitasse platea dictumst. Nullam malesuada, neque semper lobortis fringilla, neque elit tempor nibh, non ultrices tellus libero eu arcu. Phasellus laoreet dui nec tortor molestie vitae sollicitudin risus tristique. Sed ac scelerisque felis. Integer fringilla volutpat dui sed tincidunt. Phasellus aliquet ultricies mi. Nam fringilla, lorem et egestas pretium, ante massa dapibus lorem, a semper metus risus sed elit. Curabitur vitae neque lectus, quis tincidunt nibh. Aenean tristique diam id urna molestie placerat.</p>
+		<p>Suspendisse potenti. Maecenas tempor est nec dui pretium rhoncus. Sed non lacinia ipsum. Nullam aliquam tellus ut quam pharetra quis mattis dolor suscipit. Cras vulputate urna nec augue sodales at tincidunt purus imperdiet. Donec tempus porttitor interdum. Sed luctus, lorem eget ullamcorper aliquet, ligula turpis interdum purus, id facilisis dolor eros sed metus. Nullam blandit, est non sagittis posuere, ipsum ligula sagittis dolor, id dapibus enim est ut nulla. Donec at arcu sed tortor imperdiet auctor id at ipsum. Vestibulum tincidunt lorem tempus massa iaculis pulvinar. Aenean porttitor lorem eu nisi bibendum pulvinar.</p>
+		<p>Donec tristique aliquet enim sed aliquam. Nunc at libero orci, ut semper magna. Sed semper enim at purus fermentum ut varius leo bibendum. In commodo massa eget turpis ultrices consequat. Pellentesque metus sem, vestibulum ac malesuada id, condimentum eu leo. Donec eleifend nulla nec libero elementum pellentesque. In hac habitasse platea dictumst. Suspendisse ut rutrum justo. Curabitur blandit tristique libero. Vestibulum augue leo, aliquet condimentum rhoncus a, euismod ac eros. Morbi cursus diam diam, id adipiscing tortor. Sed accumsan tincidunt enim. Sed tincidunt convallis lectus vel imperdiet. Nam condimentum congue justo eget tempor. Proin sollicitudin elementum erat ac tempus.</p>
+		<p>Duis lacinia arcu laoreet nulla ornare auctor. Praesent non tellus in augue vestibulum fringilla a in tellus. Morbi id nisl mauris, nec lobortis urna. Proin justo eros, dictum ut venenatis nec, tempus eget urna. Ut lacinia nisi ac tortor scelerisque blandit. Maecenas congue pharetra sollicitudin. Vivamus ornare venenatis orci sit amet scelerisque. In hac habitasse platea dictumst. Nulla mauris odio, eleifend id consectetur a, hendrerit non nisi. Sed sit amet odio felis, vitae vehicula nulla. Mauris ultricies placerat urna in fringilla. Phasellus velit risus, sodales id tempor eu, porta a arcu. Suspendisse potenti. Praesent id auctor est. Aliquam fringilla semper risus, id consectetur diam gravida quis. Aliquam volutpat, elit non mattis volutpat, risus tellus suscipit tortor, sit amet sollicitudin tortor elit et leo.</p>	
+		<p><b>NOW SCROLL ME TO THE TOP</b></p>
+	</div>
+
+	<div>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget tincidunt sem. Donec placerat varius lacinia. Proin ornare erat enim, nec ullamcorper ligula. Cras vestibulum accumsan venenatis. Maecenas sed risus quam. Etiam nec urna tellus, vitae dapibus augue. Aliquam erat volutpat. Ut fermentum nisi vehicula nisi tincidunt luctus. Fusce ac felis sapien. Aliquam erat volutpat. In pretium volutpat orci, in fermentum lectus rutrum sit amet. Suspendisse ante mi, lacinia eu ullamcorper sed, suscipit in justo. Suspendisse potenti.</p>
+		<p>Nullam cursus elementum erat et placerat. Nam sed sapien ipsum. Duis non lectus a mauris posuere ornare a a erat. Duis blandit mi nunc, in vestibulum leo. Nam urna neque, varius pharetra ullamcorper in, placerat non nunc. Donec volutpat purus sed metus suscipit accumsan. Maecenas magna urna, lobortis vel tristique nec, eleifend a ipsum. Integer vel diam enim. Maecenas pretium, turpis sit amet ultricies fringilla, velit lectus faucibus turpis, eget elementum est nibh non sapien. Nam eget tincidunt felis. In hac habitasse platea dictumst. Nullam malesuada, neque semper lobortis fringilla, neque elit tempor nibh, non ultrices tellus libero eu arcu. Phasellus laoreet dui nec tortor molestie vitae sollicitudin risus tristique. Sed ac scelerisque felis. Integer fringilla volutpat dui sed tincidunt. Phasellus aliquet ultricies mi. Nam fringilla, lorem et egestas pretium, ante massa dapibus lorem, a semper metus risus sed elit. Curabitur vitae neque lectus, quis tincidunt nibh. Aenean tristique diam id urna molestie placerat.</p>
+		<p>Suspendisse potenti. Maecenas tempor est nec dui pretium rhoncus. Sed non lacinia ipsum. Nullam aliquam tellus ut quam pharetra quis mattis dolor suscipit. Cras vulputate urna nec augue sodales at tincidunt purus imperdiet. Donec tempus porttitor interdum. Sed luctus, lorem eget ullamcorper aliquet, ligula turpis interdum purus, id facilisis dolor eros sed metus. Nullam blandit, est non sagittis posuere, ipsum ligula sagittis dolor, id dapibus enim est ut nulla. Donec at arcu sed tortor imperdiet auctor id at ipsum. Vestibulum tincidunt lorem tempus massa iaculis pulvinar. Aenean porttitor lorem eu nisi bibendum pulvinar.</p>
+		<p>Donec tristique aliquet enim sed aliquam. Nunc at libero orci, ut semper magna. Sed semper enim at purus fermentum ut varius leo bibendum. In commodo massa eget turpis ultrices consequat. Pellentesque metus sem, vestibulum ac malesuada id, condimentum eu leo. Donec eleifend nulla nec libero elementum pellentesque. In hac habitasse platea dictumst. Suspendisse ut rutrum justo. Curabitur blandit tristique libero. Vestibulum augue leo, aliquet condimentum rhoncus a, euismod ac eros. Morbi cursus diam diam, id adipiscing tortor. Sed accumsan tincidunt enim. Sed tincidunt convallis lectus vel imperdiet. Nam condimentum congue justo eget tempor. Proin sollicitudin elementum erat ac tempus.</p>
+		<p>Duis lacinia arcu laoreet nulla ornare auctor. Praesent non tellus in augue vestibulum fringilla a in tellus. Morbi id nisl mauris, nec lobortis urna. Proin justo eros, dictum ut venenatis nec, tempus eget urna. Ut lacinia nisi ac tortor scelerisque blandit. Maecenas congue pharetra sollicitudin. Vivamus ornare venenatis orci sit amet scelerisque. In hac habitasse platea dictumst. Nulla mauris odio, eleifend id consectetur a, hendrerit non nisi. Sed sit amet odio felis, vitae vehicula nulla. Mauris ultricies placerat urna in fringilla. Phasellus velit risus, sodales id tempor eu, porta a arcu. Suspendisse potenti. Praesent id auctor est. Aliquam fringilla semper risus, id consectetur diam gravida quis. Aliquam volutpat, elit non mattis volutpat, risus tellus suscipit tortor, sit amet sollicitudin tortor elit et leo.</p>	
+	</div>
+
+</body>
+</html>
